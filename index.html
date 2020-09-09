@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>untitled-bot</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: white;
+            background-image: url("bg.png");
+            background-size: contain; /*cover*/
+            background-repeat: repeat-x;
+            margin: 0;
+        }
+        
+        #menu {
+            text-align: center;
+        }
+        .menuText {
+            color: white;
+            font-size: 1.7vw;
+            text-decoration: none;
+        }
+        #everything-else {
+            background-image: linear-gradient(white, lightblue, #8abfd1, #6eb2c9, #499cb7, #3389a5, #247996, #0d7091, #0d7091, #0d7091);
+            width: 100%;
+        }
+        #mainContent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            width: 100px;
+            height: 100px;
+        }
+        #logo {
+            font-family: monospace;
+            color: white;
+            font-size: 0.8vw; /*24px*/
+        }
+        .sub-logo {
+            font-size: 24px;
+            color: white;
+        }
+        .plsContr {
+            color:white;
+        }
+        h1, h2 {
+            color: black;
+            font-family: "Arial",serif;
+            font-size: 3vw;
+        }
+        
+        .descText {
+            color: black;
+            font-family: Arial,serif;
+        }
+        
+        #everything-else-text {
+            max-width: 900px; /*35%*/
+            margin: 2%;
+            font-size: 1.3vw;
+        }
+    </style>
+    <script>
+        
+        function onLoad() {
+	        if(window.innerHeight <= 800 && window.innerWidth <= 800) {
+		        document.getElementById("useYourHelp").style.color = "black";
+		        document.getElementById("useYourHelpA").style.color = "black";
+		        document.getElementById("fos").style.color = "black";
+	        } else {
+		        document.getElementById("useYourHelp").style.color = "white";
+		        document.getElementById("useYourHelpA").style.color = "white";
+		        document.getElementById("fos").style.color = "white";
+	        }
+	        console.log("loaded stuffz");
+        }
+        
+        window.addEventListener("resize", () => {
+            if(window.innerHeight <= 800 && window.innerWidth <= 800) {
+	            document.getElementById("useYourHelp").style.color = "black";
+	            document.getElementById("useYourHelpA").style.color = "black";
+	            document.getElementById("fos").style.color = "black";
+            } else {
+	            document.getElementById("useYourHelp").style.color = "white";
+	            document.getElementById("useYourHelpA").style.color = "white";
+	            document.getElementById("fos").style.color = "white";
+            }
+        });
+        
+        console.log("if you're reading this on your browser's inspect element, hello!");
+        console.log("if you're reading this on github, why are you even here?!");
+    </script>
+</head>
+<body onload="onLoad()">
+
+<div id="menu">
+    <p class="menuText">
+        <a class="menuText" href="https://alexisok.dev/ub/discord.html" title="Join the official support server">Official Server</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a class="menuText" href="https://discord.com/oauth2/authorize?client_id=730135989863055472&scope=bot&permissions=3460160"
+           title="Invite the bot to your Discord server">Invite</a>  &nbsp;&nbsp;| &nbsp;&nbsp;
+        <a class="menuText" href="https://github.com/alexisok/untitled-bot" title="GitHub repository">Source</a>  &nbsp;&nbsp;| &nbsp;&nbsp;
+        <a class="menuText" href="https://top.gg/bot/730135989863055472" title="View on top.gg">Top.GG</a>  &nbsp;&nbsp;| &nbsp;&nbsp;
+        <a class="menuText" href="#commands" title="View all of the commands">Commands</a>  &nbsp;&nbsp;| &nbsp;&nbsp;
+        <a class="menuText" href="#about" title="About this bot">About</a>  &nbsp;&nbsp;| &nbsp;&nbsp;
+        <a class="menuText" href="#privacy" title="View my privacy pledge">Privacy Pledge</a>  &nbsp;&nbsp;| &nbsp;&nbsp;
+        <a class="menuText" href="#attribution" title="Attribution for the backgrounds on this site">Attributions</a>
+    </p>
+</div>
+<br>
+<div style="text-align: center;">
+    <p id="logo">
+        ██╗░░░██╗███╗░░██╗████████╗██╗████████╗██╗░░░░░███████╗██████╗░░░░░░░██████╗░░█████╗░████████╗<br>
+        ██║░░░██║████╗░██║╚══██╔══╝██║╚══██╔══╝██║░░░░░██╔════╝██╔══██╗░░░░░░██╔══██╗██╔══██╗╚══██╔══╝<br>
+        ██║░░░██║██╔██╗██║░░░██║░░░██║░░░██║░░░██║░░░░░█████╗░░██║░░██║█████╗██████╦╝██║░░██║░░░██║░░░<br>
+        ██║░░░██║██║╚████║░░░██║░░░██║░░░██║░░░██║░░░░░██╔══╝░░██║░░██║╚════╝██╔══██╗██║░░██║░░░██║░░░<br>
+        ╚██████╔╝██║░╚███║░░░██║░░░██║░░░██║░░░███████╗███████╗██████╔╝░░░░░░██████╦╝╚█████╔╝░░░██║░░░<br>
+        ░╚═════╝░╚═╝░░╚══╝░░░╚═╝░░░╚═╝░░░╚═╝░░░╚══════╝╚══════╝╚═════╝░░░░░░░╚═════╝░░╚════╝░░░░╚═╝░░░</p>
+<!--    <p class="sub-logo">Version 1.3</p>-->
+    <p id="fos" class="sub-logo">A free and open-source Discord bot.</p>
+    <p id="useYourHelp" class="sub-logo">Although the bot is primarily run by one person, it could
+        <a id="useYourHelpA" class="plsContr" href="#contribute"> use your help!</a></p>
+<!--    <p class="sub-logo">-->
+<!--        <a class="plsContr" href="#commands">Commands</a> | -->
+<!--        <a class="plsContr" href="#about">About</a> | -->
+<!--        <a class="plsContr" href="#attribution">Attributions</a> | -->
+<!--        <a class="plsContr" href="#privacy">Privacy Pledge</a></p>-->
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="everything-else">
+    <div id="everything-else-text">
+        <a id="about"></a>
+        <h1>About untitled-bot</h1>
+        <p>untitled-bot, in all lowercase letters, is a bot I made for fun.  It started off as a bot for a server owned 
+        by my friend, but I figured I might as well share it.  After a while, I submitted it to top.gg, and, after a few weeks,
+        was approved.<br>
+        Enough about history, let's talk about the bot itself.  The bot is structured in such a way where it can be expanded upon
+        very easily, with basic knowledge of Java.  It does many things, most of which are utilities or fun commands.  The RPG command,
+        version 1.4, is still being made.  The commands section of this page lists much more information.</p>
+        <br><br><br><br><br><br><br>
+        <a id="commands"></a>
+        <h1>Commands</h1>
+        <p>untitled-bot comes with many commands, all of which come standard.</p>
+        <dl>
+            <dt>Ranking</dt>
+            <dd>> <code>rank [user @]</code> - get the rank of yourself or another user.</dd>
+            <dd>> <code>leaderboard</code> - show a list of the highest ranking users in the server.</dd>
+            <dd>> <code>rank-total</code> - show the total amount of xp someone has.</dd>
+            <dd>> <code>rank-settings &lt;setting&gt;</code> - set the rank settings (use <code>help rank-settings</code> for a list of rank settings).</dd>
+            
+            <dt>Utilities</dt>
+            <dd>> <code>help [command]</code> - get help with a specific command, or display all the commands.</dd>
+            <dd>> <code>prefix</code> - set the prefix for the guild.</dd>
+            <dd>> <code>status</code> - get the status and some statistics of the bot.</dd>
+            <dd>> <code>timestamp &lt;snowflake | user @ | channel #&gt;</code> - get the time a user made their account, a channel was created, or the timestamp of a snowflake.</dd>
+            <dd>> <code>uptime</code> - get the time since the bot started</dd>
+            
+            <dt>Moderation</dt>
+            <dd>> <code>log-channel</code> - set the channel where things will be logged.</dd>
+            <dd>> <code>add-log</code> - add a logging type to the channel.</dd>
+            <dd>> <code>remove-log</code> - remove a logging type from the channel.</dd>
+            <dd>> <code>get-log</code> - list all logs currently in use.</dd>
+            
+            <dt>Fun</dt>
+            <dd>> <code>someone</code> - mention a random user without pinging them.</dd>
+            <dd>> <code>brainfuck</code> - run <a href="https://en.wikipedia.org/wiki/Brainfuck">brainf***</a> code.</dd>
+            <dd>> <code>8ball</code> - simulate an 8 ball.</dd>
+            <dd>> <code>ship</code> - ship two different server members (user requested).</dd>
+            <dd>> <code>20</code> - roll a twenty-sided die.</dd>
+            <dd>> <code>owo &lt;text&gt;</code> - convewt da text u input to make it vewy kawaii &lt;3</dd>
+            
+            <dt>Reactions</dt>
+            <dd>> <code>hug</code> - send a hug gif.</dd>
+            <dd>> <code>ayaya</code> - I encourage you to not ask questions about this command.</dd>
+            <dd>> <code>hide</code> - hide behind a wall.</dd>
+            <dd>> <code>dis</code> - short for disappointed, display ಠ_ಠ</dd>
+        </dl>
+        <p>Contributions are more than welcome, they're encouraged!  Even if you don't know how to program, if you want to suggest
+            things to add to the bot, please <a href="https://alexisok.dev/ub/discord.html">join the Discord server :)</a></p>
+        <br><br><br><br><br><br><br>
+        <a id="privacy"></a>
+        <h1>Privacy Pledge</h1>
+        <p class="descText">Privacy, especially in today's world, is hard to come by.  With some other Discord bots,
+        you might not know what they're storing, much less who can access that data.  With untitled-bot, you can see
+        exactly what the source code does, what the moderators log through this bot, and request your data at any time*.
+        The minimal data stored by the bot uses your ID, and while it is identifiable to your Discord account, it is of no
+        practical use to most.<br><br>Popular Discord bots, especially those that have been approved by Discord,
+        are almost certainly safe.<br><br>
+        Creating a better and safer internet starts by asking the question, "do I really need to store this?"</p>
+        <br><br><br><br><br><br><br>
+        <a id="attribution"></a>
+        <h1>Attribution</h1>
+        <p class="descText">The background used on this page and other assets in the /untitled-bot directory are acquired from
+            <a href="https://pressstart.vip/assets">Press Start</a>.  The site looks much better with their assets, so give them some love :)</p>
+        <br><br><br><br><br><br><br>
+        <a id="contribute"></a>
+        <h1>Contributing</h1>
+        <p class="descText">Even if you don't know how to program, contributing ideas or reporting bugs still helps greatly!
+        If you want to contribute ideas, there is a channel specifically for that in <a href="https://alexisok.dev/ub/discord.html">the Discord server</a>.
+        You can also create a GitHub account and create an issue for bugs/feature suggestions.<br>
+        <br>
+        For programmers, specifically Java programmers, you can fork the repository and contribute changes.  If you have any questions about
+        contributing, feel free to DM me on Discord.</p>
+        <footer>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <p class="descText">
+                * the "data" command is only usable once every 24 hours, or, to be more precise, you must wait more than 86400 seconds between data requests.
+                You can only use the command if you are in a server where untitled-bot can read your message.  Your data is sent to you in a direct message,
+                it is not shared with anyone else.
+            </p>
+        </footer>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+</div>
+</body>
+oh hi i almost didn't see you there.  feel free to join the server!
+</html>
