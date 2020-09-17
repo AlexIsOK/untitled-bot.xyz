@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Easy Config</title>
+    <style>
+        body {
+            background: black;
+        }
+        h1, p, label {
+            color: white;
+        }
+    </style>
+    <script>
+        function generateCommand() {
+            let a = "Paste the following command into Discord.\nIf you don't know the prefix, mention the bot to get it.\n\n\n>config ";
+	
+	        a += "announceXPBoost:" + document.getElementById("announceXPBoost").value + ";";
+	        a += "workMin:" + document.getElementById("workMin").value + ";";
+	        a += "workMax:" + document.getElementById("workMax").value + ";";
+	        a += "workTimeout:" + document.getElementById("workTimeout").value + ";";
+	        a += "prefix:" + document.getElementById("prefix").value + ";";
+	        a += "stealMin:" + document.getElementById("stealMin").value + ";";
+	        a += "stealMax:" + document.getElementById("stealMax").value + ";";
+	        a += "stealChance:" + document.getElementById("stealChance").value + ";";
+	        a += "stealTimeout:" + document.getElementById("stealTimeout").value + ";";
+            
+            document.getElementById("commandArea").innerText = a;
+        }
+    </script>
+</head>
+<body>
+<h1>Easy Configuration for untitled-bot.</h1>
+<br><p>With easy configuration, you can setup nearly everything you need for the bot in one simple command!</p>
+<br>
+
+<label for="announceXPBoost">Announce XP boosts?  (true or false)</label>
+<input type="text" id="announceXPBoost" name="announceXPBoost" value="true">
+<br><br>
+
+<label for="workMin">Minimum amount of UB$ to get from working (1 to 9999)</label>
+<input type="text" id="workMin" name="workMin" value="100">
+<br><br>
+
+<label for="workMax">Maximum amount of UB$ to get from working (1 to 9999)</label>
+<input type="text" id="workMax" name="workMax" value="500">
+<br><br>
+
+<label for="workTimeout">Timeout (in seconds) to work (10 to 99999)</label>
+<input type="text" id="workTimeout" name="workTimeout" value="86400">
+<br><br>
+
+<label for="prefix">Prefix for the bot (five characters, cannot be ";" or ":", please use the prefix command in Discord for those two characters).</label>
+<input type="text" id="prefix" name="prefix" value=">">
+<br><br>
+
+<label for="stealMin">Minimum amount to gain/lose from the steal command (0 to 99999)</label>
+<input type="text" id="stealMin" name="stealMin" value="50">
+<br><br>
+
+<label for="stealMax">Maximum amount to gain/lose from the steal command (0 to 99999)</label>
+<input type="text" id="stealMax" name="stealMax" value="300">
+<br><br>
+
+<label for="stealChance">Chance for the steal command to work percentage (whole number from 0 to 99)</label>
+<input type="text" id="stealChance" name="stealChance" value="50">
+<br><br>
+
+<label for="stealTimeout">Timeout (in seconds) to steal (10 to 99999)</label>
+<input type="text" id="stealTimeout" name="stealTimeout" value="86400">
+
+<br><br>
+
+<p>Note: you cannot configure the level up messages here, you must use the "rank-settings" command for that.</p>
+
+<br><br>
+
+<button onclick="generateCommand()">Generate command!</button>
+
+<p id="commandArea"></p>
+
+</body>
+</html>
