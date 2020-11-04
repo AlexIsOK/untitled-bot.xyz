@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>untitled-bot</title>
+    <title>untitled-bot FAQ</title>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -75,15 +75,7 @@
         }
         h1, h2, h3, p, a {
             color: white;
-        }
-        .feature {
-            font-size: 3vh;
-        }
-        .button {
-            width: 200px;
-        }
-        .logo {
-            width: 24vh;
+            line-height: 200%;
         }
     </style>
     <script>
@@ -110,60 +102,42 @@
     </a>
 </div>
 <body>
-<div style="text-align: center;" class="main">
-    <a id="home"></a>
-    <h1 style="font-size: 4vh">It's time to ditch closed-source bots with paywalls and not enough features.</h1>
-    <img src="logo.png" alt="untitled-bot-logo" style="size: 3vw; border-radius: 50%;" class="logo">
+<h1>What's your stance on privacy?</h1>
+<p>Privacy should be a right, something that every service should have.
+That's why untitled-bot is completely open-sourced and allows you to obtain your data through the "data" command.</p>
+<br><br>
+<h1>Why is this free?  What's the catch?</h1>
+<p>The catch is, once I reach 1,000,000 servers, I will have conquered the planet itself!!!111!<br>
+Seriously though: I started this bot for a private server with my friends, then kept adding changes to it.
+Eventually, I thought "what if other people want to use this bot as well?", so I put the bot on
+    <a href="https://top.gg/bot/730135989863055472">Top.GG (Discord Bot List)</a>
+    and from there it gained around 30 servers in the first few days of it being added!
     <br>
-    <h2>Invite untitled-bot to your server today.</h2>
-    <h3>50+ commands, less than 20ms average ping, and completely open-source!<br>
-    Transparency and privacy should be a right, not something you have to seek out.</h3>
-    <a href="https://discord.com/oauth2/authorize?client_id=730135989863055472&scope=bot&permissions=3460160">
-        <img src="invite.png" alt="invite" class="button" style="border-radius: 10%">
-    </a>
-    &ensp;&ensp;&ensp;&ensp;
-    <a href="#features">
-        <img src="features.png" alt="features" class="button" style="border-radius: 10%">
-    </a>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <a id="features"></a>
-    <div class="feature">
-        <h1>Give users roles for leveling up</h1>
-        <p>Have the bot automatically give users a role when they level up, allowing them to access more server features,
-            channels, or simply put them higher up on the member list.</p>
-        <img src="levelUpRoles.png" alt="level up roles">
-    </div>
-    <br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br>
-    <div class="feature">
-        <h1>A Starboard to fit every server</h1>
-        <p>Easy configuration for a Starboard, all you need to do is set the channel and amount of stars, all of which can be
-        done using the ">starboard enable" command.</p>
-        <img src="starboard.png" alt="starboard">
-    </div>
-    <br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br>
-    <div class="feature">
-        <h1>Well designed leaderboard command</h1>
-        <p>Use the <code>top</code> command to see the highest leveled users in the server.</p>
-        <img src="leaderboard.png" alt="leaderboard" style="width: 50vh">
-    </div>
-    <br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br>
-    <div class="feature">
-        <h1>What are you waiting for?</h1>
-        <p><a href="https://discord.com/oauth2/authorize?client_id=730135989863055472&scope=bot&permissions=3460160">
-            Invite untitled-bot to your server today!
-        </a></p>
-    </div>
-    <br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br>
-    <div class="feature">
-        <h1>Still not convinced?</h1>
-        <p><a href="commands.html">See all of the commands here!</a></p>
-    </div>
-</div>
+    I'm also doing this to combat and provide an alternative for some other paid-for bots that lock away features that are very easy to make,
+    such as rank roles, starboard, and music players (coming soon!!).
+    <br>
+    Other than that, I don't have any real "reason" as to why I'm doing this.  I just do it because I like programming and because
+    making this bot has been a great learning experience for me.
+</p>
+<br><br>
+<h1>What kind of data do you store on me?  How do I delete it?</h1>
+<p>I store minimal data on users.  Members, as described in
+<a href="https://github.com/DV8FromTheWorld/JDA/blob/master/src/main/java/net/dv8tion/jda/api/entities/Member.java">JDA</a>,
+are cached in memory, along with guilds (servers), roles, and text channels, are cached in RAM for fewer requests to Discord and
+much faster response time.  Those entities are never stored on disk, and are deleted when the bot restarts.  For data that is stored
+on disk and kept after the bot restarts: the bot will keep your user ID (public), servers that you share with the bot, and any user data associated
+with the bot (such as xp, level, balance, etc.).  You can request a copy of your data by using the "data" command.</p>
+<h2>That's cool and all, but how do I delete my data?</h2>
+<p>Currently, no command exists to delete your data; however, I will be accepting requests to delete data if you DM me on Discord.</p>
+<br><br>
+<h1>I have an idea for a command, can I add it to the bot?</h1>
+<p>Yes, absolutely!  If you want to program the command yourself, you can do so and create a pull request on the
+<a href="https://github.com/untitledbot/untitled-bot/">GitHub</a> page.</p>
+<p>If you don't know how to program or don't want to, you can <a href="https://alexisok.dev/ub/discord.html">join the
+Discord server</a> and add it to the #suggestions channel.</p>
+<br><br>
+<h1>How fast can I expect support for the bot?</h1>
+<p>On the official Discord server, I'll usually respond within 5 minutes to 6 hours depending on if I'm asleep or not :P</p>
+<br><br>
 </body>
 </html>

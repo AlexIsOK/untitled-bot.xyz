@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>untitled-bot commands</title>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function expand() {
+            const id = document.getElementById("tn");
+            if(id.className === "topnav") {
+                id.className += " responsive";
+            } else {
+                id.className = "topnav";
+            }
+        }
+    </script>
+    <script>
+        function openTab(e, tabName) {
+            let tabcontent;
+            let tablinks;
+            
+            tabcontent = document.getElementsByClassName("tabcontent");
+            
+            for(let i = 0; i < tabcontent.length; i++) tabcontent[i].style.display = "none";
+
+            tablinks = document.getElementsByClassName("tablinks");
+            
+            for(let i = 0; i < tablinks.length; i++) tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+            document.getElementById(tabName).style.display = "block";
+            e.currentTarget.className += " active";
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #23272A; /*not quite black*/
+            font-family: Ubuntu, serif;
+            max-width: 100%;
+        }
+        h1, h2, h3, p, a {
+            color: white;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: #23272A;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            align-content: center;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            align-content: center;
+        }
+
+        .topnav a:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #28b6cb;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {display: none;}
+            .topnav a.icon {
+                float: left;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive .icon {
+                position: center;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+        .tab {
+            float: left;
+            /*border: 1px solid #2C2F33;*/
+            /*background-color: #2C2F33;*/
+            width: 30%;
+            height: 300px;
+        }
+
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: white;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            transition: 0.5s;
+            background-color: #494949;
+        }
+
+        .tab button.active {
+            background-color: #494949;
+        }
+
+        .tabcontent {
+            float: left;
+            padding: 0 12px;
+            width: 70%;
+            height: 300px;
+            display: none;
+        }
+
+        .clearfix::after {
+            transition: 1s;
+            content: "";
+            clear: both;
+            display: table;
+        }
+        * {
+            box-sizing: border-box;
+            transition-timing-function: ease;
+        }
+        
+        ul {
+            list-style: none;
+            color: white;
+            line-height: 200%;
+        }
+        
+        ul li::before {
+            content: ">";
+            color: white;
+            font-family: Ubuntu,serif;
+            line-height: 200%;
+        }
+    </style>
+</head>
+<div class="topnav" id="tn">
+    <a href="/" class="active">Home</a>
+    <a href="/commands.html">Commands</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="https://alexisok.dev/ub/discord.html">Support Server</a>
+    <a href="https://top.gg/bot/730135989863055472">DBL</a>
+    <a href="https://discord.com/oauth2/authorize?client_id=730135989863055472&scope=bot&permissions=3460160">Invite</a>
+    <a href="https://github.com/untitledbot/untitled-bot">GitHub</a>
+    <a href="javascript:void(0);" class="icon" onclick="expand()" title="Expand">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<body>
+<br><br><br><br>
+<h1>List of all the commands for untitled-bot, separated by category.</h1>
+<h3>Click a category to see the commands!</h3>
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'ranks')">Ranks</button>
+    <button class="tablinks" onclick="openTab(event, 'util')">Utilities</button>
+    <button class="tablinks" onclick="openTab(event, 'moderation')">Moderation</button>
+    <button class="tablinks" onclick="openTab(event, 'fun')">Fun</button>
+    <button class="tablinks" onclick="openTab(event, 'system')">Bot Info</button>
+    <button class="tablinks" onclick="openTab(event, 'reactions')">Reactions</button>
+    <button class="tablinks" onclick="openTab(event, 'image')">Image Filters</button>
+    <button class="tablinks" onclick="openTab(event, 'meme')">Meme Generation</button>
+</div>
+
+
+<div id="ranks" class="tabcontent">
+    <h3>Rank commands</h3>
+    <ul>
+        <li>rank - get the rank of yourself or another user.</li>
+        <li>top - display a leaderboard of the highest leveled users in the server.</li>
+        <li>rank-settings - settings related for ranks (such as level up messages) for server owners.</li>
+        <li>rank-role - give users roles for when they level up!</li>
+        <li>rank-roles - list current roles to be assigned on level up.</li>
+    </ul>
+</div>
+
+<div id="util" class="tabcontent">
+    <h3>Utilities and other such commands</h3>
+    <ul>
+        <li>help - get help with either a specific command or list all commands.</li>
+        <li>prefix - set the bot's prefix for this server.</li>
+        <li>timestamp - get the time a user made their account, a channel was made, etc.</li>
+        <li>info - get information about the server or a user.</li>
+        <li>avatar - get yours or another user's avatar.</li>
+        <li>reverse - reverse text.</li>
+        <li>config - easy config for the bot.</li>
+        <li>profile - get the profile of another user.</li>
+        <li>caps - MAKE SOME TEXT ALL CAPITAL LETTERS</li>
+        <li>lowercase - make some text all lowercase letters.</li>
+        <li>mock - MaKe A mEsSaGe ChAnGe EaCh LeTtEr CaPiTaLiZaTiOn.</li>
+        <li>source - get the source code for the bot.</li>
+        <li>which - get the source code for a particular command.</li>
+        <li>perms - get the server permissions of yourself or another user.</li>
+        <li>rot13 - run some text through an ROT13 converter.</li>
+    </ul>
+</div>
+
+<div id="system" class="tabcontent">
+    <h3>Meta commands for the bot itself.</h3>
+    <ul>
+        <li>bug-report - report a bug directly to me.</li>
+        <li>discord - get an invite link for the support server.</li>
+        <li>vote - get a link to vote for the bot on Top.GG</li>
+        <li>ping - get the bot's ping</li>
+        <li>uptime - get the amount of time the bot has been online.</li>
+        <li>stats - display some statistics for the bot.</li></ul>
+</div>
+
+<div id="moderation" class="tabcontent">
+    <h3>Moderation and logging commands</h3>
+    <ul>
+        <li>log-channel - set the channel to log events to.</li>
+        <li>add-log - add a log type to the channel.</li>
+        <li>remove-log - remove a log type from a channel.</li>
+        <li>get-log - list all logs currently in use.</li>
+    </ul>
+</div>
+
+<div id="fun" class="tabcontent">
+    <h3>Fun commands</h3>
+    <ul>
+        <li>someone - mention a random user without pinging them.</li>
+        <li>8ball - simulate an 8ball.</li>
+        <li>ship - ship two users.</li>
+        <li>20 - roll a twenty-sided die.</li>
+        <li>owo - make a stwing vewy kawaii OK!!!1</li>
+        <li>cat - get a cat fact.</li>
+    </ul>
+</div>
+<div id="reactions" class="tabcontent">
+    <h3>Reactions, some are animated!</h3>
+    <ul>
+        <li>hide - hide behind a wall</li>
+        <li>dis - display ಠ_ಠ</li>
+        <li>aol - Attack on Lenny Short Film</li>
+    </ul>
+</div>
+<div id="image" class="tabcontent">
+    <h3>Image filtering commands<br>
+        NOTE: Please upload an image to manipulate or @ mention another, otherwise it will use your avatar.</h3>
+    <ul>
+        <li>magik - LITERALLY CORRUPTS THE IMAGE (not literally).</li>
+        <li>blur - blur an image.</li>
+        <li>deepfry - deepfry an image.</li>
+        <li>invert - invert an image.</li>
+        <li>jpeg - make an image about 500% higher quality.</li>
+        <li>pixelate - make an image pixelated.</li>
+        <li>sepia - make an image warmer.</li>
+        <li>wide - make an image T H I C C.</li>
+        <li>charcoal - make an image charcoal.</li>
+        <li>explode - kabaoom.</li>
+        <li>implode - reverse kaboom.</li>
+        <li>sketch - make an image look like it was sketched.</li>
+        <li>spread - spread ALL the pixels.</li>
+        <li>swirl - whszoosh.</li>
+        <li>wave - wewewewew.</li>
+    </ul>
+</div>
+<div id="meme" class="tabcontent">
+    <h3>Generate SFW memes and images.</h3>
+    <ul>
+        <li>achievement - generate a fake minecraft achievement.</li>
+        <li>joke - generate an "Am I a Joke to You" meme.</li>
+        <li>bad - mr stock photo man points at your avatar and goes BAD...</li>
+        <li>scroll - generate a "Scroll of Truth" meme.</li>
+        <li>call - make a meme where tom calls someone.</li>
+    </ul>
+</div>
+
+<div class="clearfix"></div>
+</body>
+</html>
