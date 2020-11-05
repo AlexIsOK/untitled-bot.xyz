@@ -123,7 +123,7 @@ Eventually, I thought "what if other people want to use this bot as well?", so I
 <h1>What kind of data do you store on me?  How do I delete it?</h1>
 <p>I store minimal data on users.  Members, as described in
 <a href="https://github.com/DV8FromTheWorld/JDA/blob/master/src/main/java/net/dv8tion/jda/api/entities/Member.java">JDA</a>,
-are cached in memory, along with guilds (servers), roles, and text channels, are cached in RAM for fewer requests to Discord and
+are cached in memory, along with guilds (servers), roles, messages, and text channels are cached in RAM for fewer requests to Discord and
 much faster response time.  Those entities are never stored on disk, and are deleted when the bot restarts.  For data that is stored
 on disk and kept after the bot restarts: the bot will keep your user ID (public), servers that you share with the bot, and any user data associated
 with the bot (such as xp, level, balance, etc.).  You can request a copy of your data by using the "data" command.</p>
