@@ -85,6 +85,16 @@
         .logo {
             width: 24vh;
         }
+        img {
+            display: inline-block;
+            width: 50%;
+            height: auto;
+        }
+        @media (max-width: 600px) {
+            img {
+                width: 100%;
+            }
+        }
     </style>
     <script>
         function expand() {
@@ -113,17 +123,17 @@
 <div style="text-align: center;" class="main">
     <a id="home"></a>
     <h1 style="font-size: 4vh">It's time to ditch closed-source bots with paywalls and not enough features.</h1>
-    <img src="logo.png" alt="untitled-bot-logo" style="size: 3vw; border-radius: 50%;" class="logo">
+    <img src="logo.png" alt="untitled-bot-logo" style="size: 3vw; border-radius: 50%" class="logo">
     <br>
     <h2>Invite untitled-bot to your server today.</h2>
-    <h3>50+ commands, less than 20ms average ping, and completely open-source!<br>
+    <h3>50+ commands, less than 20ms average ping, free music player, and completely open-source!<br>
     Transparency and privacy should be a right, not something you have to seek out.</h3>
     <a href="https://discord.com/oauth2/authorize?client_id=730135989863055472&scope=bot&permissions=3460160">
-        <img src="invite.png" alt="invite" class="button" style="border-radius: 10%">
+        <img src="invite.png" alt="invite" class="button" style="">
     </a>
     &ensp;&ensp;&ensp;&ensp;
     <a href="#features">
-        <img src="features.png" alt="features" class="button" style="border-radius: 10%">
+        <img src="features.png" alt="features" class="button" style="">
     </a>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -139,8 +149,15 @@
     <div class="feature">
         <h1>A Starboard to fit every server</h1>
         <p>Easy configuration for a Starboard, all you need to do is set the channel and amount of stars, all of which can be
-        done using the ">starboard enable" command.</p>
+            done using the ">starboard enable" command.</p>
         <img src="starboard.png" alt="starboard">
+    </div>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <div class="feature">
+        <h1>A music player that is both quality and reliable</h1>
+        <p>Easily play music through the bot.  Music commands are simple and responsive.</p>
+        <img src="music.png" alt="music">
     </div>
     <br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br>
