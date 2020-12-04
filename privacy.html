@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>untitled-bot privacy stuffz</title>
+    link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function expand() {
+            const id = document.getElementById("tn");
+            if(id.className === "topnav") {
+                id.className += " responsive";
+            } else {
+                id.className = "topnav";
+            }
+        }
+    </script>
+    <script>
+        function openTab(e, tabName) {
+            let tabcontent;
+            let tablinks;
+
+            tabcontent = document.getElementsByClassName("tabcontent");
+
+            for(let i = 0; i < tabcontent.length; i++) tabcontent[i].style.display = "none";
+
+            tablinks = document.getElementsByClassName("tablinks");
+
+            for(let i = 0; i < tablinks.length; i++) tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+            document.getElementById(tabName).style.display = "block";
+            e.currentTarget.className += " active";
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #23272A; /*not quite black*/
+            font-family: Ubuntu, serif;
+            max-width: 100%;
+        }
+        h1, h2, h3, p, a {
+            color: white;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: #23272A;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            align-content: center;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            align-content: center;
+        }
+
+        .topnav a:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #28b6cb;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {display: none;}
+            .topnav a.icon {
+                float: left;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive .icon {
+                position: center;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+        .tab {
+            float: left;
+            /*border: 1px solid #2C2F33;*/
+            /*background-color: #2C2F33;*/
+            width: 30%;
+            height: 300px;
+        }
+
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: white;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            transition: 0.5s;
+            background-color: #494949;
+        }
+
+        .tab button.active {
+            background-color: #494949;
+        }
+
+        .tabcontent {
+            float: left;
+            padding: 0 12px;
+            width: 70%;
+            height: 300px;
+            display: none;
+        }
+
+        .clearfix::after {
+            transition: 1s;
+            content: "";
+            clear: both;
+            display: table;
+        }
+        * {
+            box-sizing: border-box;
+            transition-timing-function: ease;
+        }
+
+        ul {
+            list-style: none;
+            color: white;
+            line-height: 200%;
+        }
+
+        ul li::before {
+            content: ">";
+            color: white;
+            font-family: Ubuntu,serif;
+            line-height: 200%;
+        }
+    </style>
+</head>
+<body>
+<div class="topnav" id="tn">
+    <a href="/" class="active">Home</a>
+    <a href="/commands.html">Commands</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="https://alexisok.dev/ub/discord.html">Support Server</a>
+    <a href="https://top.gg/bot/730135989863055472">DBL</a>
+    <a href="https://discord.com/oauth2/authorize?client_id=730135989863055472&scope=bot&permissions=3460160">Invite</a>
+    <a href="https://github.com/untitledbot/untitled-bot">GitHub</a>
+    <a href="javascript:void(0);" class="icon" onclick="expand()" title="Expand">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<h1>untitled-bot privacy stuff</h1>
+<p>I take privacy as seriously as the next person, assuming the next person takes privacy as seriously as I do.  Which is very.</p>
+<p>Above that, I believe that services should be 100% open about what they collect, which is exactly what I'm going to do.</p>
+
+<h2>What I store on disk</h2>
+<p>I'm very open about what I store on users.  So open, in fact, that you can actually request your data to be sent to you in a zip file through the bot itself!</p>
+<p>Just join the support server (listed above) or any other server with the bot, then execute the &lt;data command.</p>
+<p>Back on-topic though, this is what I store on users:</p>
+<ul>
+    <li>Level, XP, balance, and other data sent through commands.</li>
+    <li>Cooldowns for specific commands that use them.</li>
+    <li>Your user ID (it uniquely identifies you to store your data, but the ID is public regardless).</li>
+    <li>The ID of the server you are in.</li>
+    <li>The names of commands users execute, but not the arguments (so "&lt;rank @user" will only log "&lt;rank").</li>
+    <li>Any data stored with commands.  The bot makes it somewhat obvious when something is stored on disk.</li>
+</ul>
+
+<br><br><br><br><br>
+
+<h2>What I cache</h2>
+<p>For those who don't know, caching allows bots to store data inside memory which can be used later without sending additional requests to Discord.</p>
+<p>Cached entities include:</p>
+<ul>
+    <li>Users (to speed up the leaderboard command as well as rank commands).</li>
+    <li>Text and voice channels (for the music commands and others).</li>
+    <li>Messages (if, and ONLY IF the server administrators setup deleted/edited message logging).</li>
+    <li>Servers (to display the server count and make sure the bot doesn't freeze for some servers).</li>
+    <li>Roles (for giving users a role upon level up).</li>
+</ul>
+
+<br><br><br><br><br>
+
+<h2>Am I safe using this bot?</h2>
+<p>Yes.  I don't sell your data, and never will, nor will I share it with anyone.</p>
+
+<h2>How do I delete my data?</h2>
+<p>Contact me on the official support server (listed on the nav bar above) or, if you are the server owner, you can use
+the "purge" command to remove the bot from the server and delete any data associated with that server.</p>
+<p>Your data may also be deleted after about three weeks of not being updated, mostly so it doesn't fill up my disk space :P</p>
+
+</body>
+</html>
